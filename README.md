@@ -1,3 +1,13 @@
+# 参考サイト
+
+[React に入門した人のためのもっと React が楽しくなるステップアップコース完全版](https://www.udemy.com/course/react_stepup/)
+
+- コンポーネントの分割方法（Atomic Design）
+
+[React(18)でルーティング【初学者向け】](https://zenn.dev/daiki_record/articles/f9659e62bf5206)
+
+<br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
