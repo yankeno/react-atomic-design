@@ -1,11 +1,20 @@
 import { memo } from "react";
-import { useContext } from "react";
+// import { useContext } from "react";
 import styled from "styled-components";
-import { UserContext } from "../../../providers/UserProvider";
+// import { UserContext } from "../../../providers/UserProvider";
+import { useRecoilValue } from "recoil";
+import { userState } from "../../../store/UserState";
 
 export const UserIconWithName = memo((props) => {
   const { image, name } = props;
-  const { userInfo } = useContext(UserContext);
+
+  // const { userInfo } = useContext(UserContext);
+
+  /**
+   * 値の更新を行わない場合(state の値だけ必要な場合)は
+   * useRecoilValue を使う
+   */
+  const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <SContainer>

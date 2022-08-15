@@ -1,13 +1,22 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { DefaultLayout } from "../template/DefaultLayout";
-import { UserContext } from "../../providers/UserProvider";
+// import { UserContext } from "../../providers/UserProvider";
+import { useSetRecoilState } from "recoil";
+import { userState } from "../../store/UserState";
 
 export const Top = () => {
   const navigate = useNavigate();
-  const { setUserInfo } = useContext(UserContext);
+
+  // const { setUserInfo } = useContext(UserContext);
+
+  /**
+   * state の値を使用しない(更新関数のみ使用する)場合、
+   * useSetRecoilState を使用する
+   */
+  const setUserInfo = useSetRecoilState(userState);
   const onClickAdmin = () => {
     setUserInfo({ isAdmin: true });
     navigate("/users");
